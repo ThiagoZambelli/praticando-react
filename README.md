@@ -56,6 +56,16 @@
 
 &nbsp;
 
+### Aula 3:
+- Criar contextos através da ContextAPI com o createContext;
+- Permitir o uso de contextos nos elementos com o Provider e useContext;
+- Construir hooks personalizados;
+- Procurar valores dentro de um array com o método some;
+- Remover itens de um array com o método splice e auxílio do indexOf;
+- Instalar e usar a extensão React Context DevTool.
+
+&nbsp;
+
 ----
 
 &nbsp;
