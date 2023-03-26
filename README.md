@@ -1,3 +1,5 @@
+![Alt text](public/assets/projetoPronto.gif)
+
 <img align="right" width="50%" style="margin-top:-20px" src="public/eu.png">
 
 &nbsp;

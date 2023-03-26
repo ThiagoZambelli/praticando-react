@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 2px 2px 9px var(--preto);
 }
 
 .capa {

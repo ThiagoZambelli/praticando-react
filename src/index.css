@@ -2,9 +2,9 @@
 
 :root{
   --font-principal: 'Montserrat', sans-serif;
-  --branco: #FFFFFF;
-  --preto: #000000;
-  --cinza: #E2E2E2;
+  --branco: #CBE4DE;
+  --preto: #2C3333;
+  --cinza: #2E4F4F;
 }
 
 body {

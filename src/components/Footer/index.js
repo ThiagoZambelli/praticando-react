@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className={style.footer}>
         <p>
-            Desenvolvido por:        
+            Feito por:        
         </p>
         <Link className={style.link} to={'https://www.linkedin.com/in/thiagozambelli'}>Thiago Zambelli</Link>
         <img src={eu} alt="A mini versão do criador" />
