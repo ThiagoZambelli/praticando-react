@@ -66,7 +66,51 @@
 
 &nbsp;
 
+### Aula 4:
+- Criar rotas dinâmicas;
+- Enviar parâmetros via URL;
+- Receber parâmetros com o hook useParams;
+- Planejar rotas para URLs não existentes;
+- Construir rotas aninhadas.
+
+&nbsp;
+
+### Aula 5:
+- Fazer upload de um protótipo de API no Github;
+- Hospedar o protótipo de API no My Json Server;
+- Consumir APIs com o FetchAPI;
+- Executar o deploy do projeto.
+
+&nbsp;
+
 ----
+
+&nbsp;
+
+## Criação de um fake server json e consumo do mesmo pela aplicação:
+
+### Foi feito um `Fake server json`:
+    > Para a criação do mesmo foi feito um novo repositorio no GitHub com o nome <NomeDoProjeto>-api com um arquivo db.json com os dados do dataBase. Em segui foi passado peli 'MyJson Server' com a url `https://my-json-server.typicode.com/<Nome do meu perfil GitHub>/<Nome do repositorio da api>`
+
+&nbsp;
+
+### No projeto:
+    > No projeto o import dos Videos do arquivo .json local foi bstituido por um `useEffect` que fez a requisição
+
+~~~JavaScript
+     const [videos, setVideos] = useState([]);
+
+    useEffect(() =>{
+        fetch('https://my-json-server.typicode.com/ThiagoZambelli/praticando-react-api/videos')
+        .then(resposta => resposta.json())
+        .then(dados =>{
+            setVideos(dados)
+        })
+    }, [])
+~~~
+
+- > O segundo parametro com [ ], foi usado pra determinar quando o useEffect executaria a rquisição, ou seja, somente quando o Array estivesse vazio, fazendo com que seja apenas uma requisição.
+
 
 &nbsp;
 
@@ -160,4 +204,40 @@
      if(!video){
         return <NaoEncontrado />
     }
+  ~~~
+
+&nbsp;
+
+
+## Detalhe sobre a de uma pagina base:
+
+    > os componentes de Cabeçalho, Banner e Footer eram compartilhados por todas as paginas. Por esse motigo foi criado uma Pagina base com todos esses elementos e atribuido a ela a rota de "/". Assim todas as paginas carregadas dentro dela teriam os elementos compartilhados:
+
+- #### Nas Rotas:
+   ~~~JavaScript
+     <Routes>
+        <Route path="/" element={<PaginaBase />}>
+          {/* pode-se usar o 'index' dentro do componente Route para determinar que esse é a rota index sem a necessidade de por path="/" */}
+            <Route index element={<Inicio />} />
+            <Route path="Favoritos" element={<Favoritos />} />
+            <Route path=":id" element={<Player />} />
+            <Route path="*" element={<NaoEncontrado />} />
+        </Route>
+      </Routes>
+  ~~~
+
+- #### Na Pagina Base:
+
+~~~JavaScript
+
+  <main>
+    <Cabecalho />
+    <FavoritosProvider>
+        <Container>
+            <Outlet />
+        </Container>
+    </FavoritosProvider>
+    <Footer />
+  </main>
+
   ~~~

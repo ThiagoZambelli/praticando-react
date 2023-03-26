@@ -1,16 +1,22 @@
 import style from './Player.module.css';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from 'components/Banner';
 import Titulo from 'components/Titulo';
 import { useParams } from 'react-router-dom';
-import videos from "json/db.json";
 import NaoEncontrado from 'pages/NaoEncontrado';
 
 function Player() {
+    const [video, setVideo] = useState();
     const parametros = useParams();
-    const video = videos.find((e) => {
-        return e.id === Number(parametros.id)
-    })
+
+    useEffect(()=>{
+        fetch(`https://my-json-server.typicode.com/ThiagoZambelli/praticando-react-api/videos?id=${parametros.id}`)
+        .then(resposta => resposta.json())
+        .then(dados => {
+            setVideo(...dados)
+        })
+    }, [])
+    
 
     if(!video){
         return <NaoEncontrado />
