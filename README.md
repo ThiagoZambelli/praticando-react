@@ -134,3 +134,30 @@
         )
       }
     ~~~
+
+&nbsp;
+
+
+## Detalhe sobre a criação da pagina de Não Encontrado:
+
+    > Todo path que ja não tiver uma rota específica vai car nessa pagina graças a:
+
+
+  - ### Criação de uma rota com o path = *
+  ~~~JavaScript
+    <Routes>
+      {/* pode-se usar o 'index' dentro do componente Route para determinar que esse é a rota index sem a necessidade de por path="/" */}
+      <Route index element={<Inicio />} />  
+      <Route path="/Favoritos" element={<Favoritos />} />
+      <Route path="/:id" element={<Player /> } />
+      <Route path="*" element={<NaoEncontrado />}   />
+    </Routes>
+  ~~~
+
+  - ### Criação de um if na rota de player para que tudo que não esteja na lista de videos seja direcionado para pagina de Não Encontrado:
+
+   ~~~JavaScript
+     if(!video){
+        return <NaoEncontrado />
+    }
+  ~~~
