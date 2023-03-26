@@ -47,6 +47,15 @@
 
 &nbsp;
 
+### Aula 2:
+- Criar novos componentes;
+- Construir novas rotas;
+- Compartilhar informações entre componentes com props e children;
+- Importar dados de um arquivo json;
+- Usar o método .map para listar componentes.
+
+&nbsp;
+
 ----
 
 &nbsp;
@@ -55,3 +64,34 @@
 ### Detalhe sobre `Index` Route:
 
     > Pode-se usar o `index` dentro do componente Route para determinar que esse é a rota index sem a necessidade de por `path="/"`
+
+&nbsp;
+
+
+### Detalhe sobre a criação do Card:
+
+    > Na criação dos Cards havia 2 opçoes, passas como prop cada uma das propriedades de cada elemento JSON ou passar o elemento inteiro mas desmanchado :`
+
+  - Possibilidade 1:
+
+    ~~~JavaScript
+     {videos.map((e) => {
+                    return <Card
+                        key={e.id}
+                        id={e.id}
+                        titulo={e.titulo}
+                        capa={e.capa}
+                    />
+      })}
+    ~~~
+
+  - Possibilidade 2:
+  
+    ~~~JavaScript
+     {videos.map((e) => {
+                    return <Card
+                        key={e.id}
+                        {...e}
+                    />
+      })}
+    ~~~
