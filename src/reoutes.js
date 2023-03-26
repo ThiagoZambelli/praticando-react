@@ -6,7 +6,7 @@ function AppRoutes() {
         <BrowserRouter>
             <Routes>
                 {/* pode-se usar o 'index' dentro do componente Route para determinar que esse é a rota index sem a necessidade de por path="/" */}
-                <Route index element={<Inicio />} />
+                <Route index element={<Inicio />} />                
             </Routes>
         </BrowserRouter>
     )

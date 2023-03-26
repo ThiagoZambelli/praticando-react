@@ -1,0 +1,19 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    padding: 1.5em 0;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: var(--preto);
+    align-items: center;  
+}
+.link{
+    padding-left: .5em;
+}
+.footer p, .link{
+    color: var(--branco);
+}
+
+.footer img{
+    max-width: 80px;
+}

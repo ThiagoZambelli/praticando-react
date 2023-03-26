@@ -1,9 +1,14 @@
+import Cabecalho from 'components/Cabecalho';
+import Footer from 'components/Footer';
 import styles from './Inicio.module.css'
 
-function Inicio(){
-    return (        
-        <h1>chupa que é de uva</h1>
-        
+function Inicio() {
+    return (
+        <>
+            <Cabecalho />
+            <Footer />
+        </>
+
     )
 }
 

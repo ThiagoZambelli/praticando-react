@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Cabecalho.module.css';
+import CabecalhoLink from './CabecalhoLink';
 import logo from './logo.png'
 
 function Cabecalho(){
@@ -12,7 +13,12 @@ function Cabecalho(){
                 />
             </Link>
             <nav>
-                
+                <CabecalhoLink url={"./"}>
+                    Home
+                </CabecalhoLink>
+                <CabecalhoLink url={"./Favoritos"}>
+                    Favoritos
+                </CabecalhoLink>
             </nav>
         </header>
     )
