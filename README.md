@@ -61,14 +61,14 @@
 &nbsp;
 
 
-### Detalhe sobre `Index` Route:
+## Detalhe sobre `Index` Route:
 
     > Pode-se usar o `index` dentro do componente Route para determinar que esse é a rota index sem a necessidade de por `path="/"`
 
 &nbsp;
 
 
-### Detalhe sobre a criação do Card:
+## Detalhe sobre a criação do Card:
 
     > Na criação dos Cards havia 2 opçoes, passas como prop cada uma das propriedades de cada elemento JSON ou passar o elemento inteiro mas desmanchado :`
 
@@ -94,4 +94,33 @@
                         {...e}
                     />
       })}
+    ~~~
+
+
+&nbsp;
+
+
+## Detalhe sobre a criação de Contexto:
+
+    > A cominicação no React é de elemento pai para filho apenas. Para que aja uma counicação fora desse escopo é utilizado a criação de contexto.    
+  - #### Essa criação foi feita no `src/contextos/Favoritos.js`
+
+  - ### Criação do Context:
+
+    ~~~JavaScript
+     import { createContext, useState } from "react";
+
+      export const FavoritosContext = createContext();
+      FavoritosContext.displayName = "Favoritos";
+
+      export default function FavoritosProvider({children}){
+      const [favoritos, setFavoritos] = useState([]);
+
+      return(
+        <FavoritosContext.Provider
+            value={{favoritos, setFavoritos}}>
+                {children}
+            </FavoritosContext.Provider>
+        )
+      }
     ~~~
